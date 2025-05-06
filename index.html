@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="개인화된 건강 및 피트니스 트래커">
+    <meta name="author" content="Gudan">
+    <title>개인화된 건강 및 피트니스 트래커</title>
+    <link rel="stylesheet" href="css/index_styles.css">
+    <script src="script/index_script.js" defer></script>
+</head>
+<body>
+    <header>
+        <br>
+        <h1>개인화된 건강 및 피트니스 트래커</h1>
+    </header>
+    <main>
+        <div class="login-wrapper">
+            <h1></h1>
+            <form action="/login" method="POST">
+              <label for="username">ID</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="아이디를 입력하세요"
+                required
+              />
+                
+              <label for="password">PW</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="비밀번호를 입력하세요"
+                required
+              />
+        
+              <button type="button" id="loginButton">로그인</button>
+              <div class="signup-link">
+                <a href="signup.html">회원가입</a>
+              </div>
+            </form>
+          </div>
+    </main>
+</body>
+</html>

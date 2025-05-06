@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기능 페이지</title>
+    <link rel="stylesheet" href="css/func_styles.css">
+    <script src="script/func_script.js" defer></script>
+</head>
+<body>
+    <div class="func-wrapper">
+        <div>
+            <h1 id="welcomeMessage">환영합니다!</h1>
+            <div class="action-buttons">
+                <a href="index.html">로그아웃</a>
+            </div>
+        </div>
+
+        <div class="profile-section">
+          <div class="modal-overlay"></div>
+          <!-- 모달 팝업 -->
+          <div class="modal" id="targetModal">
+              <div class="modal_popup">
+                  <h3>운동 목표 설정</h3>
+                  <p>아래에서 정보를 입력하고 운동 목표를 선택하세요:</p>
+                  <form id="targetForm">
+                      
+                      <label for="age">(만)나이:</label>
+                      <input type="number" id="age" placeholder="나이 입력" required><br><br>
+
+                      <label for="weightNow">현재 몸무게 (kg):</label>
+                      <input type="number" id="weightNow" placeholder="현재 몸무게 입력" required><br><br>
+      
+                      <label for="height">신장 (cm):</label>
+                      <input type="number" id="height" placeholder="신장 입력" required><br><br>
+      
+                      <label for="muscleNow">현재 근육량 (kg):</label>
+                      <input type="number" id="muscleNow" placeholder="근육량 입력" required><br><br>
+      
+                      <!-- 운동 목표 -->
+                      <label for="target_muscle">근육량 목표:</label>
+                      <select id="target_muscle">
+                          <option value="근육 유지">근육 유지</option>
+                          <option value="근육 증량">근육 증량</option>
+                          <option value="근육 감량">근육 감량</option>
+                      </select><br><br>
+      
+                      <label for="target_weight">체중 목표:</label>
+                      <select id="target_weight">
+                          <option value="체중 유지">체중 유지</option>
+                          <option value="체중 증량">체중 증량</option>
+                          <option value="체중 감량">체중 감량</option>
+                      </select><br><br>
+      
+                      <button type="button" id="saveTarget">저장</button>
+                  </form>
+                  <button type="button" class="close_btn">닫기</button>
+              </div>
+          </div>
+      
+          <!-- 모달 열기 버튼 -->
+          <button type="button" class="modal_btn">운동 목표 설정</button>
+      
+          <div >
+              <h3>정보 및 운동 목표</h3>
+              <div id="selectedTarget">
+                <div class="box"><p class="targetdisplay" id="targetDisplay">현재 몸무게<br></p></div>
+                <div class="box"><p class="targetdisplay" id="targetDisplay2">신장<br></p></div>
+                <div class="box"><p class="targetdisplay" id="targetDisplay3">현재 근육량<br></p></div>
+                <div class="box"><p class="targetdisplay" id="targetDisplay4">근육량 목표<br></p></div>
+                <div class="box"><p class="targetdisplay" id="targetDisplay5">체중 목표<br></p></div>
+              </div>
+          </div>
+      
+          <div>
+            <h2>오늘의 활동</h2>
+            <div class="log-container"id="selectedLogs">
+                <div class="exercise-log" >
+                    <h3>운동 기록</h3>
+                    <ul id="logList"></ul>
+                </div>
+                <div class="meal-log" >
+                    <h3>식단 기록</h3>
+                    <ul id="logList2"></ul>
+                </div>
+            </div>
+          </div>
+
+      </div>
+      
+
+      <div class="daily-log-section">
+        <h2>일일 기록</h2>
+    
+        <div class="log-container">
+            <!-- 운동 기록 -->
+            <div class="exercise-log">
+                <h3>운동 기록하기</h3>
+                <label for="exercise">운동 이름:</label>
+                <input type="text" id="exercise" placeholder="운동 이름 입력">
+    
+                <label for="duration">운동량 (회):</label>
+                <input type="number" id="duration" placeholder="운동량 입력">
+    
+                <button type="button" id="logExercise">운동 기록 추가</button>
+            </div>
+    
+            <!-- 식단 기록 -->
+            <div class="meal-log">
+                <h3>식단 기록하기</h3>
+                <label for="meal">음식 이름:</label>
+                <input type="text" id="meal" placeholder="음식 이름 입력">
+    
+                <label for="calories">칼로리:</label>
+                <input type="number" id="calories" placeholder="칼로리 입력">
+    
+                <button type="button" id="logMeal">식단 기록 추가</button>
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="chart-section">
+            <h2>최근 7일의 데이터 시각화</h2>
+            <canvas id="progressChart"></canvas>
+        </div>
+        <div class="analysis-section">
+            <h2>진행 상황 분석 및 조언</h2>
+            <p id="adviceMessage">분석 결과를 기다려주세요...</p>
+        </div>        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
